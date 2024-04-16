@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'django_filters',
     'modeltranslation',
     'django.contrib.admin',
@@ -169,6 +170,7 @@ ACCOUNT_FORMS = {
 }
 
 LANGUAGES = (
+    ('kg', 'Kyrgyz'),
     ('ru', 'Russian'),
     ('en', 'English'),
 )
@@ -178,4 +180,31 @@ LOCALE_PATHS = [
 ]
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
-MODELTRANSLATION_LANGUAGES = ('ru', 'en')
+MODELTRANSLATION_LANGUAGES = ('kg', 'ru', 'en')
+
+SOCIALACCOUNT_PROVIDERS = {
+    # 'github': {
+    #     'GITHUB_URL': 'https://your.github-server.domain',
+    # },
+    'google': {
+            'APP': {
+                'client_id': os.getenv('CLIENT_ID'),
+                'secret': os.getenv('CLIENT_SECRET'),
+                'redirect_uris': ['http://localhost:8000/accounts/google/login/callback/'],
+                'key': ''
+            },
+            'SCOPE': [
+                'profile',
+                'email',
+            ],
+            'AUTH_PARAMS': {
+                'access_type': 'online',
+            }
+        }
+}
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
+LOGIN_REDIRECT_URL = '/'

@@ -24,7 +24,7 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('/', include('blog.urls'))
+    # path('/', include('car.urls')),
 )
 
 if settings.DEBUG:
