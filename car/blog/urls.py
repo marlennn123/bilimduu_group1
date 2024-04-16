@@ -1,12 +1,10 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
+from django.urls import path
 from .views import *
 
-router = DefaultRouter()
-router.register(r'car', CarViewSet)
-router.register(r'bet', BetViewSet)
+# urlpatterns = [
+#     path('car/', CarViewSet.as_view({'get': 'list', 'post': 'create'}), name='car_list'),
+#     path('car/<int:pk>/', CarViewSet.as_view({
+#         'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}, name='car_detail'
+#     ))
+# ]
 
-urlpatterns = [
-    path('car/', include(router.urls)),
-    path('bet/', include(router.urls)),
-]

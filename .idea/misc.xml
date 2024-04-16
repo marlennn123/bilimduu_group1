@@ -3,7 +3,11 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.12 (bestone)" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (bestone)" project-jdk-type="Python SDK" />
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (bilimduu_group1)" project-jdk-type="Python SDK" />
+>>>>>>> 3d94b375424b3564b22268b1c140a7953a1aff4f
   <component name="PyCharmProfessionalAdvertiser">
     <option name="shown" value="true" />
   </component>
